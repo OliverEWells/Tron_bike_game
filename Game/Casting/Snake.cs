@@ -8,7 +8,7 @@ namespace Unit05.Game.Casting
     /// <para>A long limbless reptile.</para>
     /// <para>The responsibility of Snake is to move itself.</para>
     /// </summary>
-    public class Snake : Actor
+    public class Player : Actor
     {
         private List<Actor> segments = new List<Actor>();
 
@@ -16,7 +16,7 @@ namespace Unit05.Game.Casting
         /// <summary>
         /// Constructs a new instance of a Snake.
         /// </summary>
-        public Snake(Color color, int start_x, int start_y)
+        public Player(Color color, int start_x, int start_y)
         {
             SetColor(color);
             PrepareBody(start_x, start_y);
