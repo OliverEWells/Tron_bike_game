@@ -8,14 +8,10 @@
           "System.Numerics.Vectors": "4.5.0"
         },
         "compile": {
-          "lib/netstandard2.1/Raylib-cs.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.1/Raylib-cs.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.1/Raylib-cs.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.1/Raylib-cs.dll": {}
         },
         "runtimeTargets": {
           "runtimes/linux-x64/native/libraylib.so": {
@@ -120,19 +116,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\olive\\.nuget\\packages\\": {}
+    "C:\\Users\\Cole\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\olive\\BYUI\\Fall_2022\\Program_files\\snake_not_complete\\Unit05.csproj",
+      "projectUniqueName": "C:\\Users\\Cole\\OneDrive\\Desktop\\Tron_bike_game\\Unit05.csproj",
       "projectName": "Unit05",
-      "projectPath": "C:\\Users\\olive\\BYUI\\Fall_2022\\Program_files\\snake_not_complete\\Unit05.csproj",
-      "packagesPath": "C:\\Users\\olive\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\olive\\BYUI\\Fall_2022\\Program_files\\snake_not_complete\\obj\\",
+      "projectPath": "C:\\Users\\Cole\\OneDrive\\Desktop\\Tron_bike_game\\Unit05.csproj",
+      "packagesPath": "C:\\Users\\Cole\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Cole\\OneDrive\\Desktop\\Tron_bike_game\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\olive\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Cole\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -167,8 +163,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -177,7 +172,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
