@@ -21,7 +21,7 @@ namespace Unit05.Game
             // create the cast
             Cast cast = new Cast();
             cast.AddActor("food", new Food());
-            cast.AddActor("snake", new Snake(Constants.YELLOW, 10, 20));
+            cast.AddActor("snake", new Player(Constants.YELLOW, 10, 20));
             cast.AddActor("score", new Score());
 
             // create the services
