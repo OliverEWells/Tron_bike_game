@@ -17,6 +17,8 @@ namespace Unit05.Game.Scripting
     public class HandleCollisionsAction : Action
     {
         private bool isGameOver = false;
+        private bool red_lost = false;
+        private bool blue_lost = false;
 
         /// <summary>
         /// Constructs a new instance of HandleCollisionsAction.
@@ -75,6 +77,7 @@ namespace Unit05.Game.Scripting
                 if (segment.GetPosition().Equals(head.GetPosition()))
                 {
                     isGameOver = true;
+                    blue_lost = true;
                 }
             }
             foreach (Actor segment in body2)
@@ -82,6 +85,7 @@ namespace Unit05.Game.Scripting
                 if (segment.GetPosition().Equals(head.GetPosition()))
                 {
                     isGameOver = true;
+                    red_lost = true;
                 }
             }
         }
@@ -98,6 +102,8 @@ namespace Unit05.Game.Scripting
                 int x = Constants.MAX_X / 2;
                 int y = Constants.MAX_Y / 2;
                 Point position = new Point(x, y);
+                string final_message = "Who Lost?";
+                
 
                 Actor message = new Actor();
                 message.SetText("Game Over!");
