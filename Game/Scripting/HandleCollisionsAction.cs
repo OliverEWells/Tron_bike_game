@@ -35,6 +35,13 @@ namespace Unit05.Game.Scripting
                 HandleFoodCollisions(cast);
                 HandleSegmentCollisions(cast);
                 HandleGameOver(cast);
+                Player snake = (Player)cast.GetFirstActor("BluePlayer");
+                List<Actor> body = snake.GetBody();
+                snake.GrowTail(1);
+
+                Player snake2 = (Player)cast.GetFirstActor("RedPlayer");
+                List<Actor> body2 = snake2.GetBody();
+                snake2.GrowTail(1);
             }
         }
 
@@ -67,9 +74,12 @@ namespace Unit05.Game.Scripting
             Player snake2 = (Player)cast.GetFirstActor("RedPlayer");
             Actor head2 = snake2.GetHead();
             Actor head = snake.GetHead();
+
             List<Actor> body = snake.GetBody();
 
             List<Actor> body2 = snake2.GetBody();
+            int number = body.Count;
+            
             
 
             foreach (Actor segment in body)
@@ -79,13 +89,23 @@ namespace Unit05.Game.Scripting
                     isGameOver = true;
                     blue_lost = true;
                 }
-            }
-            foreach (Actor segment in body2)
-            {
-                if (segment.GetPosition().Equals(head.GetPosition()))
+                else if (segment.GetPosition().Equals(head2.GetPosition()))
                 {
                     isGameOver = true;
                     red_lost = true;
+                }
+            }
+            foreach (Actor segment in body2)
+            {
+                if (segment.GetPosition().Equals(head2.GetPosition()))
+                {
+                    isGameOver = true;
+                    red_lost = true;
+                }
+                if (segment.GetPosition().Equals(head.GetPosition()))
+                {
+                    isGameOver = true;
+                    blue_lost = true;
                 }
             }
         }
@@ -103,10 +123,23 @@ namespace Unit05.Game.Scripting
                 int y = Constants.MAX_Y / 2;
                 Point position = new Point(x, y);
                 string final_message = "Who Lost?";
+                if ((blue_lost == true) & (red_lost == true))
+                {
+                    final_message = "Tie!";
+                }
+                else if (red_lost == true)
+                {
+                    final_message = "Blue Won! Red Lost";
+                }
+                else if (blue_lost == true)
+                {
+                    final_message = "Red Won! Blue Lost";
+                }
+
                 
 
                 Actor message = new Actor();
-                message.SetText("Game Over!");
+                message.SetText(final_message);
                 message.SetPosition(position);
                 cast.AddActor("messages", message);
 
