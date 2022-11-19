@@ -21,8 +21,8 @@ namespace Unit05.Game
             // create the cast
             Cast cast = new Cast();
             cast.AddActor("food", new Food()); //possible boosts later
-            cast.AddActor("BluePlayer", new Player(Constants.BLUE, 10, 20));
-            cast.AddActor("RedPlayer", new Player(Constants.RED, 100, 200));
+            cast.AddActor("BluePlayer", new Player(Constants.BLUE, 45, 300));
+            cast.AddActor("RedPlayer", new Player(Constants.RED, 450, 300));
 
             cast.AddActor("score", new Score());// dont need score
 

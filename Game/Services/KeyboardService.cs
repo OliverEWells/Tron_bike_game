@@ -27,8 +27,8 @@ namespace Unit05.Game.Services
             keys["d"] = KeyboardKey.KEY_D;
             keys["i"] = KeyboardKey.KEY_UP;
             keys["j"] = KeyboardKey.KEY_LEFT;
-            keys["k"] = KeyboardKey.KEY_RIGHT;
-            keys["l"] = KeyboardKey.KEY_DOWN;
+            keys["k"] = KeyboardKey.KEY_DOWN;
+            keys["l"] = KeyboardKey.KEY_RIGHT;
 
         }
 
