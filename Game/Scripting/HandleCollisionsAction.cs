@@ -42,7 +42,7 @@ namespace Unit05.Game.Scripting
         /// <param name="cast">The cast of actors.</param>
         private void HandleFoodCollisions(Cast cast)
         {
-            Player snake = (Player)cast.GetFirstActor("snake");
+            Player snake = (Player)cast.GetFirstActor("BluePlayer");
             Score score = (Score)cast.GetFirstActor("score");
             Food food = (Food)cast.GetFirstActor("food");
             
@@ -61,7 +61,7 @@ namespace Unit05.Game.Scripting
         /// <param name="cast">The cast of actors.</param>
         private void HandleSegmentCollisions(Cast cast)
         {
-            Player snake = (Player)cast.GetFirstActor("snake");
+            Player snake = (Player)cast.GetFirstActor("BluePlayer");
             Actor head = snake.GetHead();
             List<Actor> body = snake.GetBody();
 
@@ -78,7 +78,7 @@ namespace Unit05.Game.Scripting
         {
             if (isGameOver == true)
             {
-                Player snake = (Player)cast.GetFirstActor("snake");
+                Player snake = (Player)cast.GetFirstActor("BluePlayer");
                 List<Actor> segments = snake.GetSegments();
                 Food food = (Food)cast.GetFirstActor("food");
 

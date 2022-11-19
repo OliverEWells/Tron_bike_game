@@ -24,7 +24,7 @@ namespace Unit05.Game.Scripting
         /// <inheritdoc/>
         public void Execute(Cast cast, Script script)
         {
-            Player snake = (Player)cast.GetFirstActor("snake");
+            Player snake = (Player)cast.GetFirstActor("BluePlayer");
             List<Actor> segments = snake.GetSegments();
             Actor score = cast.GetFirstActor("score");
             Actor food = cast.GetFirstActor("food");

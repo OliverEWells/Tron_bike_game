@@ -20,13 +20,14 @@ namespace Unit05.Game
 
         public static int FRAME_RATE = 15;
         public static int FONT_SIZE = 15;
-        public static string CAPTION = "Snake";
-        public static int SNAKE_LENGTH = 8;
+        public static string CAPTION = "Player";
+        public static int SNAKE_LENGTH = 4;
 
         public static Color RED = new Color(255, 0, 0);
         public static Color WHITE = new Color(255, 255, 255);
         public static Color YELLOW = new Color(255, 255, 0);
         public static Color GREEN = new Color(0, 255, 0);
+        public static Color BLUE = new Color(0, 0, 255);
 
     }
 }

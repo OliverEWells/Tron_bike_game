@@ -20,9 +20,11 @@ namespace Unit05.Game
         {
             // create the cast
             Cast cast = new Cast();
-            cast.AddActor("food", new Food());
-            cast.AddActor("snake", new Player(Constants.YELLOW, 10, 20));
-            cast.AddActor("score", new Score());
+            cast.AddActor("food", new Food()); //possible boosts later
+            cast.AddActor("BluePlayer", new Player(Constants.BLUE, 10, 20));
+            cast.AddActor("RedPlayer", new Player(Constants.RED, 100, 200));
+
+            cast.AddActor("score", new Score());// dont need score
 
             // create the services
             KeyboardService keyboardService = new KeyboardService();
