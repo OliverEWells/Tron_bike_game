@@ -34,7 +34,7 @@ namespace Unit05.Game.Scripting
             {
                 HandleFoodCollisions(cast);
                 HandleSegmentCollisions(cast);
-                HandleGameOver(cast);
+                
                 Player snake = (Player)cast.GetFirstActor("BluePlayer");
                 List<Actor> body = snake.GetBody();
                 snake.GrowTailBlue(1);
@@ -42,6 +42,7 @@ namespace Unit05.Game.Scripting
                 Player snake2 = (Player)cast.GetFirstActor("RedPlayer");
                 List<Actor> body2 = snake2.GetBody();
                 snake2.GrowTailRed(1);
+                HandleGameOver(cast);
             }
         }
 
@@ -116,7 +117,11 @@ namespace Unit05.Game.Scripting
             {
                 Player snake = (Player)cast.GetFirstActor("BluePlayer");
                 List<Actor> segments = snake.GetSegments();
+                
                 Food food = (Food)cast.GetFirstActor("food");
+
+                Player snake2 = (Player)cast.GetFirstActor("RedPlayer");
+                List<Actor> segments2 = snake2.GetSegments();
 
                 // create a "game over" message
                 int x = Constants.MAX_X / 2;
@@ -130,10 +135,19 @@ namespace Unit05.Game.Scripting
                 else if (red_lost == true)
                 {
                     final_message = "Blue Won! Red Lost";
+
+                    foreach (Actor segment in segments2)
+                {
+                    segment.SetColor(Constants.WHITE);
+                }
                 }
                 else if (blue_lost == true)
                 {
                     final_message = "Red Won! Blue Lost";
+                    foreach (Actor segment in segments)
+                {
+                    segment.SetColor(Constants.WHITE);
+                }
                 }
 
                 
@@ -144,10 +158,10 @@ namespace Unit05.Game.Scripting
                 cast.AddActor("messages", message);
 
                 // make everything white
-                foreach (Actor segment in segments)
-                {
-                    segment.SetColor(Constants.WHITE);
-                }
+                // foreach (Actor segment in segments)
+                // {
+                //     segment.SetColor(Constants.WHITE);
+                // }
                 food.SetColor(Constants.WHITE);
             }
         }
