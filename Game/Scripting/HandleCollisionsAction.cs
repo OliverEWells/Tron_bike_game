@@ -115,9 +115,7 @@ namespace Unit05.Game.Scripting
             if (isGameOver == true)
             {
                 Player snake = (Player)cast.GetFirstActor("BluePlayer");
-                Player snake2 = (Player)cast.GetFirstActor("Red Player");
                 List<Actor> segments = snake.GetSegments();
-                List<Actor> segments2 = snake2.GetSegments();
                 Food food = (Food)cast.GetFirstActor("food");
 
                 // create a "game over" message
@@ -128,33 +126,14 @@ namespace Unit05.Game.Scripting
                 if ((blue_lost == true) & (red_lost == true))
                 {
                     final_message = "Tie!";
-                    foreach (Actor segment in segments2)
-                        {
-                            segment.SetColor(Constants.WHITE);
-                        }
-                    foreach (Actor segment in segments)
-                        {
-                            segment.SetColor(Constants.WHITE);
-                        }
-
                 }
                 else if (red_lost == true)
                 {
                     final_message = "Blue Won! Red Lost";
-
-                    foreach (Actor segment in segments2)
-                        {
-                            segment.SetColor(Constants.WHITE);
-                        }
                 }
                 else if (blue_lost == true)
                 {
                     final_message = "Red Won! Blue Lost";
-
-                    foreach (Actor segment in segments)
-                {
-                    segment.SetColor(Constants.WHITE);
-                }
                 }
 
                 
@@ -164,7 +143,11 @@ namespace Unit05.Game.Scripting
                 message.SetPosition(position);
                 cast.AddActor("messages", message);
 
-                
+                // make everything white
+                foreach (Actor segment in segments)
+                {
+                    segment.SetColor(Constants.WHITE);
+                }
                 food.SetColor(Constants.WHITE);
             }
         }
