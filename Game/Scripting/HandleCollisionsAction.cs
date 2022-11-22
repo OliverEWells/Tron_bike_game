@@ -128,33 +128,20 @@ namespace Unit05.Game.Scripting
                 if ((blue_lost == true) & (red_lost == true))
                 {
                     final_message = "Tie!";
-                    foreach (Actor segment in segments2)
-                        {
-                            segment.SetColor(Constants.WHITE);
-                        }
-                    foreach (Actor segment in segments)
-                        {
-                            segment.SetColor(Constants.WHITE);
-                        }
+                    
 
                 }
                 else if (red_lost == true)
                 {
                     final_message = "Blue Won! Red Lost";
 
-                    foreach (Actor segment in segments2)
-                        {
-                            segment.SetColor(Constants.WHITE);
-                        }
+                    
                 }
                 else if (blue_lost == true)
                 {
                     final_message = "Red Won! Blue Lost";
 
-                    foreach (Actor segment in segments)
-                {
-                    segment.SetColor(Constants.WHITE);
-                }
+                    
                 }
 
                 
@@ -163,7 +150,7 @@ namespace Unit05.Game.Scripting
                 message.SetText(final_message);
                 message.SetPosition(position);
                 cast.AddActor("messages", message);
-
+                
                 
                 food.SetColor(Constants.WHITE);
             }
