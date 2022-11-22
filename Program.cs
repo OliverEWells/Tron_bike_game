@@ -29,7 +29,7 @@ namespace Unit05.Game
 
             // create the services
             KeyboardService keyboardService = new KeyboardService();
-            VideoService videoService = new VideoService(true);
+            VideoService videoService = new VideoService(false);
            
             // create the script
             Script script = new Script();
