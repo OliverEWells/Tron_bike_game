@@ -1,4 +1,5 @@
-﻿using Unit05.Game.Casting;
+﻿
+using Unit05.Game.Casting;
 using Unit05.Game.Directing;
 using Unit05.Game.Scripting;
 using Unit05.Game.Services;
@@ -28,7 +29,7 @@ namespace Unit05.Game
 
             // create the services
             KeyboardService keyboardService = new KeyboardService();
-            VideoService videoService = new VideoService(false);
+            VideoService videoService = new VideoService(true);
            
             // create the script
             Script script = new Script();
