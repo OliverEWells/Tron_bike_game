@@ -37,11 +37,11 @@ namespace Unit05.Game.Scripting
                 HandleGameOver(cast);
                 Player snake = (Player)cast.GetFirstActor("BluePlayer");
                 List<Actor> body = snake.GetBody();
-                snake.GrowTail(1);
+                snake.GrowTailBlue(1);
 
                 Player snake2 = (Player)cast.GetFirstActor("RedPlayer");
                 List<Actor> body2 = snake2.GetBody();
-                snake2.GrowTail(1);
+                snake2.GrowTailRed(1);
             }
         }
 
@@ -58,7 +58,7 @@ namespace Unit05.Game.Scripting
             if (snake.GetHead().GetPosition().Equals(food.GetPosition()))
             {
                 int points = food.GetPoints();
-                snake.GrowTail(points);
+                //snake.GrowTail(points);
                 score.AddPoints(points);
                 food.Reset();
             }

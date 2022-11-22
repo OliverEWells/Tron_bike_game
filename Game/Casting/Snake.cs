@@ -53,7 +53,7 @@ namespace Unit05.Game.Casting
         /// Grows the snake's tail by the given number of segments.
         /// </summary>
         /// <param name="numberOfSegments">The number of segments to grow.</param>
-        public void GrowTail(int numberOfSegments)
+        public void GrowTailBlue(int numberOfSegments)
         {
             for (int i = 0; i < numberOfSegments; i++)
             {
@@ -68,6 +68,18 @@ namespace Unit05.Game.Casting
                 segmentBlue.SetText("#");
                 segmentBlue.SetColor(Constants.BLUE);
                 segments.Add(segmentBlue);
+            }
+                
+        }
+
+        public void GrowTailRed(int numberOfSegments)
+        {
+            for (int i = 0; i < numberOfSegments; i++)
+            {
+                Actor tail = segments.Last<Actor>();
+                Point velocity = tail.GetVelocity();
+                Point offset = velocity.Reverse();
+                Point position = tail.GetPosition().Add(offset);
 
                 Actor segmentRed = new Actor();
                 segmentRed.SetPosition(position);
@@ -76,7 +88,12 @@ namespace Unit05.Game.Casting
                 segmentRed.SetColor(Constants.RED);
                 segments.Add(segmentRed);
             }
+                
+            
+                
         }
+
+        
 
         /// <inheritdoc/>
         public override void MoveNext()
